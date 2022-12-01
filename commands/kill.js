@@ -2,7 +2,7 @@ const {updateCriteria, restartApp} = require('../lib/util');
 
 const config = require('config');
 
-exports.command = 'kill <range>';
+exports.command = 'kill [range]';
 exports.desc = 'Cleans up docker containers used by Docable.';
 
 exports.builder = yargs => {
