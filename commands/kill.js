@@ -24,7 +24,7 @@ exports.handler = async arguments => {
     config.name = arguments.name;
     config.age = arguments.age;
     config.range = arguments.range;
-    updateCriteria(config);
+    await updateCriteria(config);
     restartApp();
 };
 
