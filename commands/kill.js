@@ -18,12 +18,18 @@ exports.builder = yargs => {
             type: 'number'
         }
     });
+
+    yargs.positional('range', {
+        describe: 'How often to check check existing containers',
+        type: 'string',
+        default: '* * * * *'
+    });
 };
 
 exports.handler = async arguments => {
-    config.name = arguments.name;
-    config.age = arguments.age;
-    config.range = arguments.range;
+    config.name = arguments.name || undefined;
+    config.age = arguments.age || undefined;
+    config.range = arguments.range || undefined;
     await updateCriteria(config);
     restartApp();
 };
